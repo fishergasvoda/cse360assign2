@@ -1,28 +1,32 @@
 public class AddingMachine {
 
-	private int total;
+    private int total;
+    private String transactionHistory = "0";
 
-	public AddingMachine () {
-		total = 0;  // not needed - included for clarity
-	}
-
-	public int getTotal () {
-	    return 0;
-	}
-
-	public void add (int value) {
-
+    public AddingMachine () {
+        total = 0;  // not needed - included for clarity
     }
 
-	public void subtract (int value) {
+    public int getTotal () {
+        return total;
+    }
 
-	}
+    public void add (int value) {
+        transactionHistory = transactionHistory + " + " + value;
+        total += value;
+    }
 
-	public String toString () {
-		return "";
-	}
+    public void subtract (int value) {
+        transactionHistory = transactionHistory + " - " + value;
+        total -= value;
+    }
 
-	public void clear() {
+    public String toString () {
+        return transactionHistory;
+    }
 
-	}
+    public void clear() {
+        total = 0;
+        transactionHistory = "0";
+    }
 }
